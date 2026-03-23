@@ -20,9 +20,7 @@ AMBIGUOUS_LOW = 0.70
 LONG_QUESTION_LEN = 80
 
 
-# -----------------------------
 # 공통 유틸
-# -----------------------------
 def load_pdf_text(path: str) -> str:
     reader = PdfReader(path)
     texts = []
@@ -71,9 +69,7 @@ def call_json_response(prompt: str) -> dict:
     return json.loads(text)
 
 
-# -----------------------------
 # 1단계: PDF 기반 카테고리 생성
-# -----------------------------
 def generate_categories_from_material(material_text: str) -> list[dict]:
     prompt = f"""
 너는 강의자료 분석 도우미다.
@@ -120,9 +116,7 @@ def initialize_categories():
     return categories
 
 
-# -----------------------------
 # 2단계: 질문 카테고리 분류
-# -----------------------------
 def classify_question(question: str, categories: list[dict]) -> dict:
     category_text = "\n".join(
         [
@@ -157,9 +151,7 @@ needs_refine을 true로 하라.
     return call_json_response(prompt)
 
 
-# -----------------------------
 # 4단계: 애매/장황 질문만 추가 정제
-# -----------------------------
 def refine_question(question: str, categories: list[dict]) -> dict:
     category_names = ", ".join([c["name"] for c in categories])
 
@@ -189,9 +181,7 @@ def refine_question(question: str, categories: list[dict]) -> dict:
     return call_json_response(prompt)
 
 
-# -----------------------------
 # 저장소 관리
-# -----------------------------
 def load_store():
     return load_json(STORE_FILE, [])
 
@@ -214,9 +204,7 @@ def get_centroid_from_questions(items):
     return np.mean(np.array(vectors), axis=0).tolist()
 
 
-# -----------------------------
 # 3단계: 카테고리 내부 임베딩 비교
-# -----------------------------
 def find_best_group_in_category(question_embedding, category_items):
     if not category_items:
         return None, 0.0
@@ -255,9 +243,7 @@ def make_new_group_id(store, category_id):
     return f"{category_id}_g{next_num}"
 
 
-# -----------------------------
 # 전체 파이프라인
-# -----------------------------
 def process_question(question: str, categories: list[dict], store: list[dict]):
     classification = classify_question(question, categories)
     category_id = classification["category_id"]
