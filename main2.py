@@ -78,6 +78,7 @@ def generate_categories_from_material(material_text: str) -> list[dict]:
 조건:
 - 카테고리는 5~10개
 - 너무 겹치지 않게 만들 것
+- 마지막 카테고리는 무조건 "기타"로 할 것
 - 각 카테고리마다:
   1) id
   2) name
@@ -250,6 +251,12 @@ def process_question(question: str, categories: list[dict], store: list[dict]):
     confidence = classification["confidence"]
     needs_refine = classification["needs_refine"]
 
+    # category_id로 name 찾기
+    category_name = next(
+        (c["name"] for c in categories if c["id"] == category_id),
+        category_id
+    )
+
     compare_question = question
 
     if needs_refine or len(question) >= LONG_QUESTION_LEN or confidence < 0.65:
@@ -260,6 +267,11 @@ def process_question(question: str, categories: list[dict], store: list[dict]):
         classification = classify_question(compare_question, categories)
         category_id = classification["category_id"]
         confidence = classification["confidence"]
+
+        category_name = next(
+            (c["name"] for c in categories if c["id"] == category_id),
+            category_id
+        )
 
     emb = get_embedding(compare_question)
     category_items = get_category_items(store, category_id)
@@ -282,6 +294,7 @@ def process_question(question: str, categories: list[dict], store: list[dict]):
         "original_question": question,
         "compare_question": compare_question,
         "category_id": category_id,
+        "category_name": category_name,
         "group_id": assigned_group
     }
 
@@ -292,6 +305,7 @@ def process_question(question: str, categories: list[dict], store: list[dict]):
         "original_question": question,
         "compare_question": compare_question,
         "category_id": category_id,
+        "category_name": category_name,
         "confidence": confidence,
         "group_id": assigned_group,
         "best_similarity": round(best_score, 4),
