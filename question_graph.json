@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {
+      "id": "q_b1d9fdd3",
+      "page": 3,
+      "original_question": "애플 M1 칩의 특징이 뭘까요? 기존 인텔 아키텍처랑 핵심 차이가 궁금합니다",
+      "compare_question": "애플 M1 칩의 특징이 뭘까요? 기존 인텔 아키텍처랑 핵심 차이가 궁금합니다",
+      "category_id": "cat11",
+      "confidence": 0.89
+    },
+    {
+      "id": "q_b0b2e983",
+      "page": 20,
+      "original_question": "인텔 86 아키텍처? 왜 하필 86인가요",
+      "compare_question": "인텔 86 아키텍처? 왜 하필 86인가요",
+      "category_id": "cat11",
+      "confidence": 0.82
+    }
+  ],
+  "edges": []
+}

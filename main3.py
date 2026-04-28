@@ -10,7 +10,7 @@ load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-PDF_FILE = "2-3)_2장._OSI_모델과_TCP-IP_프로토콜_(31_pages).pdf"
+PDF_FILE = "ch1 12.pdf"
 CATEGORY_FILE = "categories.json"
 GRAPH_FILE = "question_graph.json"
 EMBEDDING_STORE_FILE = "question_embeddings.json"
@@ -87,7 +87,8 @@ def generate_categories_from_material(material_text: str) -> list[dict]:
 아래 강의자료를 보고, 학생 질문 분류에 적합한 카테고리를 생성하라.
 
 조건:
-- 카테고리는 5~10개
+- 카테고리를 나누는데, 나눈 카테고리가 강의 자료의 모든 부분을 포괄하도록 해줘 (자료의 어떤 부분에 대한 질문도 최소한 하나의 카테고리에 속할 수 있게, 이 조건을 만족할 수 있다면 개수는 신경쓰지 마)
+- 기타 카테고리하나는 마지막에 무조건 만들어줘(자료와 관련없는 질문을 위한 카테고리)
 - 너무 겹치지 않게 만들 것
 - 각 카테고리마다 id, name, description, keywords 포함
 
@@ -248,6 +249,9 @@ def process_question_graph(
         classification = classify_question(compare_question, categories)
         category_id = classification["category_id"]
         confidence = classification["confidence"]
+
+    if confidence < 0.65:
+        category_id = "cat16"
 
     new_embedding = get_embedding(compare_question)
 

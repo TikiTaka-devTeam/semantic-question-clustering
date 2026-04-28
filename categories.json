@@ -1,90 +1,199 @@
 [
   {
     "id": "cat1",
-    "name": "프로토콜 계층구조",
-    "description": "프로토콜의 계층 구조와 관련된 질문",
+    "name": "OS 개요와 역할",
+    "description": "운영체제의 정의, 목표, 관점(사용자/시스템), 커널과 시스템 프로그램의 구분, OS가 무엇을 하는지에 대한 전반적인 설명을 다룹니다.",
     "keywords": [
-      "프로토콜",
-      "계층 구조",
-      "통신",
-      "예제"
+      "운영체제",
+      "OS 정의",
+      "커널",
+      "시스템 프로그램",
+      "사용자 관점",
+      "시스템 관점",
+      "resource allocator",
+      "control program"
     ]
   },
   {
     "id": "cat2",
-    "name": "OSI 모델",
-    "description": "OSI 모델의 작동 및 개념에 대한 질문",
+    "name": "컴퓨터 시스템 조직과 부팅",
+    "description": "컴퓨터 시스템의 기본 구성 요소, 버스 구조, CPU/메모리/I/O의 관계, 부트스트랩과 시스템 부팅 과정, 컴퓨터 시스템 동작 원리를 다룹니다.",
     "keywords": [
-      "OSI",
-      "모델",
-      "계층화",
-      "통신"
+      "컴퓨터 시스템 구조",
+      "버스",
+      "부팅",
+      "bootstrap",
+      "ROM",
+      "firmware",
+      "메모리",
+      "CPU",
+      "system startup"
     ]
   },
   {
     "id": "cat3",
-    "name": "TCP/IP 프로토콜",
-    "description": "TCP/IP 프로토콜 및 관련 계층에 대한 질문",
+    "name": "인터럽트와 입출력 하드웨어",
+    "description": "I/O 장치, 컨트롤러, 포트, 레지스터, 메모리 맵 I/O, I/O 맵 I/O, 폴링, 인터럽트, DMA를 포함한 하드웨어 수준의 입출력 동작을 다룹니다.",
     "keywords": [
-      "TCP/IP",
-      "프로토콜 그룹",
-      "비교",
-      "계층"
+      "I/O",
+      "device controller",
+      "interrupt",
+      "polling",
+      "DMA",
+      "bus mastering",
+      "memory-mapped I/O",
+      "I/O-mapped I/O",
+      "register"
     ]
   },
   {
     "id": "cat4",
-    "name": "주소지정",
-    "description": "주소 지정 방식과 관련된 질문",
+    "name": "I/O 시스템과 커널 I/O 서브시스템",
+    "description": "I/O 시스템 콜, 디바이스 드라이버, I/O 모델(블로킹/논블로킹, 동기/비동기), I/O 스케줄링, 버퍼링, 더블 버퍼링, 스풀링, STREAMS 등 OS의 I/O 소프트웨어 계층을 다룹니다.",
     "keywords": [
-      "주소",
-      "물리 주소",
-      "논리 주소",
-      "포트 주소"
+      "system call",
+      "device driver",
+      "blocking I/O",
+      "non-blocking I/O",
+      "synchronous I/O",
+      "asynchronous I/O",
+      "buffering",
+      "double buffering",
+      "spooling",
+      "STREAMS",
+      "I/O scheduling"
     ]
   },
   {
     "id": "cat5",
-    "name": "캡슐화",
-    "description": "데이터 캡슐화 과정 및 개념에 대한 질문",
+    "name": "운영체제 보호와 사용자-커널 모드",
+    "description": "유저 모드와 커널 모드, 듀얼 모드 동작, 특권 명령어, 시스템 콜을 통한 모드 전환, 타이머 인터럽트를 이용한 제어, I/O 보호를 다룹니다.",
     "keywords": [
-      "캡슐화",
-      "데이터",
-      "프로세스",
-      "계층"
+      "user mode",
+      "kernel mode",
+      "mode bit",
+      "privileged instruction",
+      "trap",
+      "fault",
+      "timer interrupt",
+      "I/O protection",
+      "protection"
     ]
   },
   {
     "id": "cat6",
-    "name": "계층 간 통신",
-    "description": "계층 간의 통신 방식 및 원리에 대한 질문",
+    "name": "저장장치 계층과 캐시",
+    "description": "저장장치의 계층 구조, 속도/비용/휘발성/용량 특성, 메인 메모리와 보조 저장장치, HDD/SSD/NVM, 캐시의 동작 원리와 쓰기 정책을 다룹니다.",
     "keywords": [
-      "계층",
-      "통신",
-      "통신 단위",
-      "프로토콜"
+      "storage hierarchy",
+      "cache",
+      "caching",
+      "DRAM",
+      "HDD",
+      "SSD",
+      "NVM",
+      "write-through",
+      "write-back",
+      "write-around",
+      "secondary storage"
     ]
   },
   {
     "id": "cat7",
-    "name": "예제 이해",
-    "description": "제공된 예제를 바탕으로 한 질문",
+    "name": "멀티프로세서와 분산/클러스터 시스템",
+    "description": "단일 프로세서와 다중 프로세서 구조, SMP/AMP, UMA/NUMA, 분산 시스템, 클러스터, 공유 저장소, 메시지 기반 통신 구조를 다룹니다.",
     "keywords": [
-      "예제",
-      "이해",
-      "사례",
-      "비교"
+      "multiprocessor",
+      "SMP",
+      "AMP",
+      "UMA",
+      "NUMA",
+      "distributed systems",
+      "cluster",
+      "shared storage",
+      "SAN",
+      "message passing"
     ]
   },
   {
     "id": "cat8",
-    "name": "응용 계층",
-    "description": "응용 계층과 관련된 질문",
+    "name": "프로그램 실행과 프로세스/메모리 구조",
+    "description": "저장 프로그램 개념, 폰 노이만 구조, 프로세스의 코드/데이터/스택/힙, CPU 내부 상태, 프로세스와 스레드의 기본 개념, 메모리와 실행 상태를 다룹니다.",
     "keywords": [
-      "응용 계층",
-      "메시지",
-      "기능",
-      "서비스"
+      "von Neumann",
+      "stored program",
+      "process",
+      "code section",
+      "data section",
+      "stack",
+      "heap",
+      "program counter",
+      "instruction register",
+      "registers"
+    ]
+  },
+  {
+    "id": "cat9",
+    "name": "OS 주요 관리 기능",
+    "description": "프로세스 관리, 메모리 관리, 파일 시스템 관리, 대용량 저장장치 관리, 보호와 보안 등 운영체제의 주요 관리 기능과 책임을 다룹니다.",
+    "keywords": [
+      "process management",
+      "memory management",
+      "file system",
+      "mass storage",
+      "protection",
+      "security",
+      "resource management",
+      "deadlock",
+      "allocation"
+    ]
+  },
+  {
+    "id": "cat10",
+    "name": "컴퓨팅 환경과 최신 시스템 형태",
+    "description": "전통적 환경, 모바일, 클라이언트-서버, P2P, 클라우드, 가상화, 실시간 임베디드 시스템 등 다양한 컴퓨팅 환경과 그 특징을 다룹니다.",
+    "keywords": [
+      "computing environments",
+      "mobile",
+      "client-server",
+      "peer-to-peer",
+      "cloud computing",
+      "virtualization",
+      "embedded systems",
+      "real-time OS",
+      "RTOS",
+      "VMM",
+      "SaaS",
+      "PaaS",
+      "IaaS"
+    ]
+  },
+  {
+    "id": "cat11",
+    "name": "아키텍처와 특수 프로세서",
+    "description": "CPU 아키텍처의 확장, x86/x86-64 레지스터, AI 가속기, GPU/TPU/NPU/FPGA/ASIC, SoC와 같은 특수 하드웨어와 관련된 내용을 다룹니다.",
+    "keywords": [
+      "x86-64",
+      "register",
+      "GPU",
+      "TPU",
+      "NPU",
+      "FPGA",
+      "ASIC",
+      "SoC",
+      "AI accelerator",
+      "instruction pointer"
+    ]
+  },
+  {
+    "id": "cat12",
+    "name": "기타",
+    "description": "강의자료의 주제와 직접 관련되지 않는 일반 질문, 잡담, 강의 내용 외 질문을 다룹니다.",
+    "keywords": [
+      "기타",
+      "무관한 질문",
+      "일반 질문",
+      "off-topic"
     ]
   }
 ]
